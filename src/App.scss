@@ -1,0 +1,227 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  outline: none;
+  border: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+.App {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.sidebar {
+  width: 320px;
+  min-width: 320px;
+  height: 100%;
+  padding: 20px 25px;
+  border-right: 1px solid #808080;
+  h5 {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+  p {
+    font-size: 18px;
+    color: #808080;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  a {
+    font-size: 20px;
+    font-weight: 600;
+    &:hover {
+      color: #0099e5;
+    }
+  }
+}
+.about-modal {
+  width: 720px;
+  padding: 30px 25px;
+  background-color: #fff;
+  box-shadow: 0 0 15px 0 rgba(#000, 0.2);
+  position: relative;
+  z-index: 99;
+  h4 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  .modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.about-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(#fff, 0.8);
+}
+// Content Header
+.content {
+  flex: 1;
+
+  .header {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #808080;
+    .search {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      position: relative;
+      input {
+        height: 100%;
+        width: 100%;
+        padding: 0 30px 0 0;
+        font-size: 18px;
+      }
+      .icon {
+        height: 60px;
+        width: 60px;
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .download {
+      width: 40%;
+      display: flex;
+      gap: 20px;
+      cursor: pointer;
+      .selected {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        svg {
+          background: #fff;
+          display: block;
+          cursor: pointer;
+        }
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        svg {
+          font-size: 18px;
+          display: block;
+        }
+        button{
+          background: transparent;
+        }
+      }
+      select{
+        padding:5px 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        appearance: none;
+        cursor: pointer;
+        option{
+          background-color: #ddd;
+        }
+      }
+    }
+    .back{
+      display: flex;
+      align-items: center;
+      gap:5px;
+      padding-left: 20px;
+      text-decoration: none;
+
+      .back-btn{
+        background: transparent;
+        font-size: 20px;
+        display: block;
+        cursor: pointer;
+        
+      }
+      svg{
+        font-size: 28px;
+        cursor: pointer;
+      }
+    }
+    
+  }
+  .brands {
+    padding: 10px 15px;
+    background-color: #f7f8f7;
+
+    .brand {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 7px 0;
+      display: flex;
+      flex-direction: column;
+      h5 {
+        font-size: 20px;
+        cursor: pointer;
+        margin: 10px 0;
+      }
+      .brand-colors {
+        display: flex;
+        flex: 1;
+        span {
+          cursor: pointer;
+          background-color: var(--bgColor);
+          color: var(--textColor);
+          width: 70px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 14px;
+          font-weight: 500;
+          text-indent: -9999px;
+        }
+      }
+      &.selected {
+        border: 2px solid red;
+        .brand-colors {
+          span {
+            flex: 1;
+            text-indent: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.copied {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: var(--bgClip);
+  color: var(--textClip);
+  border-radius: 5px;
+}
